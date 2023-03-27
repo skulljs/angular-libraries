@@ -5,9 +5,9 @@ import { v4 as uuidv4 } from 'uuid';
   // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[skLoader]',
 })
-export class LoaderDirective implements OnChanges {
-  @Input() appLoader = true;
-  @Input() loaderSource = 'assets/images/loader.gif';
+export class SkLoaderDirective implements OnChanges {
+  @Input() skLoader = true;
+  @Input() loaderSource = 'https://github.com/skulljs/angular-libraries/assets/loader.gif';
   @Input() loaderHeight = '50px';
   @Input() loaderWidth = '50px';
 
@@ -22,7 +22,7 @@ export class LoaderDirective implements OnChanges {
   }
 
   toggleLoader() {
-    if (this.appLoader) {
+    if (this.skLoader) {
       this.el.nativeElement.style.display = 'none';
       const img = document.createElement('img');
       img.id = 'preloader_' + this.uuid;

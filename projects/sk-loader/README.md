@@ -1,4 +1,4 @@
-# [skulljs] [1.0.0] angular loader
+# [skulljs] [1.1.0] angular loader
 
 Loader for skulljs's angular component
 
