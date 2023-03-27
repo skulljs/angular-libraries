@@ -1,6 +1,6 @@
-# [skulljs] angular libraries
+# [skulljs] [1.0.0] angular loader
 
-Libraries for skulljs's angular component
+Loader for skulljs's angular component
 
 ## Documentation
 
@@ -8,7 +8,7 @@ See our [documentation](https://skulljs.github.io)
 
 ## Changelog
 
-- Loader: see [CHANGELOG.md](projects/loader/CHANGELOG.md)
+See [CHANGELOG.md](CHANGELOG.md)
 
 ## Author(s)
 
