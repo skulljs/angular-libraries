@@ -10,8 +10,11 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "paths": {
-      "loader": [
-        "dist/loader"
+      "sk-loader": [
+        "dist/sk-loader"
+      ],
+      "sk-scroll-to-top-btn": [
+        "dist/sk-scroll-to-top-btn"
       ]
     },
     "noFallthroughCasesInSwitch": true,

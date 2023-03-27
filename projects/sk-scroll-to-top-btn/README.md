@@ -1,6 +1,6 @@
-# [skulljs] [1.1.1] angular loader
+# [skulljs] [1.1.0] angular scroll to top btn
 
-Loader for skulljs's angular component
+Scroll to top button for skulljs's angular component
 
 ## Documentation
 

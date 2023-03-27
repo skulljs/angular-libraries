@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 })
 export class SkLoaderDirective implements OnChanges {
   @Input() skLoader = true;
-  @Input() loaderSource = 'https://raw.githubusercontent.com/skulljs/angular-libraries/main/assets/loader.gif';
+  @Input() loaderSource = 'https://raw.githubusercontent.com/skulljs/angular-libraries/main/assets/skLoader.gif';
   @Input() loaderHeight = '50px';
   @Input() loaderWidth = '50px';
 

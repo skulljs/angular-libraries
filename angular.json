@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "loader": {
+    "sk-loader": {
       "projectType": "library",
       "root": "projects/sk-loader",
       "sourceRoot": "projects/sk-loader/src",
@@ -35,6 +35,42 @@
           "builder": "@angular-eslint/builder:lint",
           "options": {
             "lintFilePatterns": ["projects/sk-loader/**/*.ts", "projects/sk-loader/**/*.html"]
+          }
+        }
+      }
+    },
+    "sk-scroll-to-top-btn": {
+      "projectType": "library",
+      "root": "projects/sk-scroll-to-top-btn",
+      "sourceRoot": "projects/sk-scroll-to-top-btn/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/sk-scroll-to-top-btn/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sk-scroll-to-top-btn/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/sk-scroll-to-top-btn/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/sk-scroll-to-top-btn/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["projects/sk-scroll-to-top-btn/**/*.ts", "projects/sk-scroll-to-top-btn/**/*.html"]
           }
         }
       }
