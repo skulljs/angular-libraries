@@ -1,6 +1,6 @@
 {
   "name": "@skulljs/angular-scroll-to-top-btn",
-  "version": "1.0.0",
+  "version": "16.0.0",
   "description": "Scroll to top button for skulljs's angular component",
   "private": false,
   "repository": {
@@ -9,8 +9,8 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^15.2.0",
-    "@angular/core": "^15.2.0"
+    "@angular/common": "^16.1.2",
+    "@angular/core": "^16.1.2"
   },
   "dependencies": {
     "tslib": "^2.3.0"
