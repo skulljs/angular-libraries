@@ -1,6 +1,6 @@
 {
   "name": "@skulljs/angular-loader",
-  "version": "16.0.0",
+  "version": "16.0.1",
   "description": "Loader for skulljs's angular component",
   "private": false,
   "repository": {
