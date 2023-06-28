@@ -11,6 +11,7 @@ export class SkScrollToTopBtnComponent implements AfterViewInit {
   @Input() hoverBgColor = '#004e6d';
   @Input() minDisplayWidth?: number;
   @Input() maxDisplayWidth?: number;
+
   @ViewChild('btn') private btn?: ElementRef;
   windowScrolled = false;
 
@@ -19,11 +20,13 @@ export class SkScrollToTopBtnComponent implements AfterViewInit {
       const btn = this.btn.nativeElement as HTMLElement;
       const icon = btn.children[0] as HTMLElement;
 
-      // normal
+      this.calcDisplayOnScreenWidth(window);
+
+      // bg normal
       btn.style.backgroundColor = this.normalBgColor;
       icon.style.fill = this.calcIconColor(this.normalBgColor);
 
-      // hover
+      // bg hover
       btn.onmouseenter = () => {
         btn.style.backgroundColor = this.hoverBgColor;
         icon.style.fill = this.calcIconColor(this.hoverBgColor);
@@ -54,17 +57,21 @@ export class SkScrollToTopBtnComponent implements AfterViewInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
+    const window = event.target as Window;
+    this.calcDisplayOnScreenWidth(window);
+  }
+
+  calcDisplayOnScreenWidth(window: Window) {
     const btn = this.btn?.nativeElement as HTMLElement;
-    const target = event.target as Window;
     if (this.maxDisplayWidth && this.minDisplayWidth) {
-      if (target.innerWidth > this.maxDisplayWidth || target.innerWidth < this.minDisplayWidth) btn.classList.add('hide');
-      if (target.innerWidth <= this.maxDisplayWidth && target.innerWidth >= this.minDisplayWidth) btn.classList.remove('hide');
+      if (window.innerWidth > this.maxDisplayWidth || window.innerWidth < this.minDisplayWidth) btn.classList.add('hide');
+      if (window.innerWidth <= this.maxDisplayWidth && window.innerWidth >= this.minDisplayWidth) btn.classList.remove('hide');
     } else if (this.maxDisplayWidth) {
-      if (target.innerWidth > this.maxDisplayWidth) btn.classList.add('hide');
-      if (target.innerWidth <= this.maxDisplayWidth) btn.classList.remove('hide');
+      if (window.innerWidth > this.maxDisplayWidth) btn.classList.add('hide');
+      if (window.innerWidth <= this.maxDisplayWidth) btn.classList.remove('hide');
     } else if (this.minDisplayWidth) {
-      if (target.innerWidth < this.minDisplayWidth) btn.classList.add('hide');
-      if (target.innerWidth >= this.minDisplayWidth) btn.classList.remove('hide');
+      if (window.innerWidth < this.minDisplayWidth) btn.classList.add('hide');
+      if (window.innerWidth >= this.minDisplayWidth) btn.classList.remove('hide');
     }
   }
 
