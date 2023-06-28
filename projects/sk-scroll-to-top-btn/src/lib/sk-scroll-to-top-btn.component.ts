@@ -9,6 +9,8 @@ import { Component, HostListener, Input, AfterViewInit, ViewChild, ElementRef } 
 export class SkScrollToTopBtnComponent implements AfterViewInit {
   @Input() normalBgColor = '#357a9b';
   @Input() hoverBgColor = '#004e6d';
+  @Input() minDisplayWidth?: number;
+  @Input() maxDisplayWidth?: number;
   @ViewChild('btn') private btn?: ElementRef;
   windowScrolled = false;
 
@@ -43,10 +45,26 @@ export class SkScrollToTopBtnComponent implements AfterViewInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
+    if (window.scrollY || document.documentElement.scrollTop || document.body.scrollTop > 100) {
       this.windowScrolled = true;
-    } else if ((this.windowScrolled && window.pageYOffset) || document.documentElement.scrollTop || document.body.scrollTop < 10) {
+    } else if ((this.windowScrolled && window.scrollY) || document.documentElement.scrollTop || document.body.scrollTop < 10) {
       this.windowScrolled = false;
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    const btn = this.btn?.nativeElement as HTMLElement;
+    const target = event.target as Window;
+    if (this.maxDisplayWidth && this.minDisplayWidth) {
+      if (target.innerWidth > this.maxDisplayWidth && target.innerWidth < this.minDisplayWidth) btn.classList.add('hide');
+      if (target.innerWidth <= this.maxDisplayWidth && target.innerWidth >= this.minDisplayWidth) btn.classList.remove('hide');
+    } else if (this.maxDisplayWidth) {
+      if (target.innerWidth > this.maxDisplayWidth) btn.classList.add('hide');
+      if (target.innerWidth <= this.maxDisplayWidth) btn.classList.remove('hide');
+    } else if (this.minDisplayWidth) {
+      if (target.innerWidth < this.minDisplayWidth) btn.classList.add('hide');
+      if (target.innerWidth >= this.minDisplayWidth) btn.classList.remove('hide');
     }
   }
 
