@@ -57,7 +57,7 @@ export class SkScrollToTopBtnComponent implements AfterViewInit {
     const btn = this.btn?.nativeElement as HTMLElement;
     const target = event.target as Window;
     if (this.maxDisplayWidth && this.minDisplayWidth) {
-      if (target.innerWidth > this.maxDisplayWidth && target.innerWidth < this.minDisplayWidth) btn.classList.add('hide');
+      if (target.innerWidth > this.maxDisplayWidth || target.innerWidth < this.minDisplayWidth) btn.classList.add('hide');
       if (target.innerWidth <= this.maxDisplayWidth && target.innerWidth >= this.minDisplayWidth) btn.classList.remove('hide');
     } else if (this.maxDisplayWidth) {
       if (target.innerWidth > this.maxDisplayWidth) btn.classList.add('hide');
