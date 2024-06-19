@@ -8,7 +8,8 @@ See our [documentation](https://skulljs.github.io)
 
 ## Changelog
 
-- Loader: see [CHANGELOG.md](projects/loader/CHANGELOG.md)
+- SkLoader: see [CHANGELOG.md](projects/sk-loader/CHANGELOG.md)
+- SkScrollToTopBtn: see [CHANGELOG.md](projects/sk-scroll-to-top-btn/CHANGELOG.md)
 
 ## Author(s)
 

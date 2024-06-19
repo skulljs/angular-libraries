@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sk-loader": {
+    "SkLoader": {
       "projectType": "library",
       "root": "projects/sk-loader",
       "sourceRoot": "projects/sk-loader/src",
@@ -28,18 +28,24 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/sk-loader/tsconfig.spec.json",
-            "polyfills": ["zone.js", "zone.js/testing"]
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": ["projects/sk-loader/**/*.ts", "projects/sk-loader/**/*.html"]
+            "lintFilePatterns": [
+              "projects/sk-loader/**/*.ts",
+              "projects/sk-loader/**/*.html"
+            ]
           }
         }
       }
     },
-    "sk-scroll-to-top-btn": {
+    "SkScrollToTopBtn": {
       "projectType": "library",
       "root": "projects/sk-scroll-to-top-btn",
       "sourceRoot": "projects/sk-scroll-to-top-btn/src",
@@ -64,20 +70,28 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/sk-scroll-to-top-btn/tsconfig.spec.json",
-            "polyfills": ["zone.js", "zone.js/testing"]
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         },
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": ["projects/sk-scroll-to-top-btn/**/*.ts", "projects/sk-scroll-to-top-btn/**/*.html"]
+            "lintFilePatterns": [
+              "projects/sk-scroll-to-top-btn/**/*.ts",
+              "projects/sk-scroll-to-top-btn/**/*.html"
+            ]
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": false,
-    "schematicCollections": ["@angular-eslint/schematics"]
+    "analytics": "6bc49d0c-cec6-4d96-81fc-5bd43d2659fd",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

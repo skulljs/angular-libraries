@@ -1,5 +1,10 @@
 # Changelog
 
+## v18.0.0 - Rebuild from scratch and sync angular version
+
+- Rebuild from scratch
+- Sync Angular Version
+
 ## v16.1.0 - Add minDisplayWidth and maxDisplayWidth inputs
 
 - Remove default hide on small screen size
