@@ -5,6 +5,10 @@
 - Rebuild from scratch
 - Sync Angular Version
 
+## v17.0.0 - Sync Angular Version
+
+- Sync Angular Version
+
 ## v16.0.0 - Sync Angular Version
 
 - Sync Angular Version
