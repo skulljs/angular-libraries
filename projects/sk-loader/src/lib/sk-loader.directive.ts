@@ -2,8 +2,9 @@ import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
 import { v4 as uuidv4 } from 'uuid';
 
 @Directive({
-  // eslint-disable-next-line @angular-eslint/directive-selector
-  selector: '[skLoader]',
+    // eslint-disable-next-line @angular-eslint/directive-selector
+    selector: '[skLoader]',
+    standalone: false
 })
 export class SkLoaderDirective implements OnChanges {
   @Input() skLoader = true;

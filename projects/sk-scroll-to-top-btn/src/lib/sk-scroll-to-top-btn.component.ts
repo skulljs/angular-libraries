@@ -1,10 +1,11 @@
 import { Component, HostListener, Input, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
-  // eslint-disable-next-line @angular-eslint/component-selector
-  selector: 'sk-scroll-to-top-btn',
-  templateUrl: './sk-scroll-to-top-btn.component.html',
-  styleUrls: ['./sk-scroll-to-top-btn.component.scss'],
+    // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'sk-scroll-to-top-btn',
+    templateUrl: './sk-scroll-to-top-btn.component.html',
+    styleUrls: ['./sk-scroll-to-top-btn.component.scss'],
+    standalone: false
 })
 export class SkScrollToTopBtnComponent implements AfterViewInit {
   @Input() normalBgColor = '#357a9b';
