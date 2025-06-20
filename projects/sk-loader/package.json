@@ -1,6 +1,6 @@
 {
   "name": "@skulljs/angular-loader",
-  "version": "19.0.1",
+  "version": "20.0.0",
   "description": "Loader for skulljs's angular component",
   "private": false,
   "repository": {
@@ -9,8 +9,8 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "@angular/common": "^19.0.0",
-    "@angular/core": "^19.0.0",
+    "@angular/common": "^20.0.0",
+    "@angular/core": "^20.0.0",
     "uuid": "^11.1.0"
   },
   "dependencies": {
