@@ -1,4 +1,4 @@
-# [skulljs] [20.0.0] angular scroll to top btn
+# [skulljs] [20.1.0] angular scroll to top btn
 
 Scroll to top button for skulljs's angular component
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## v20.1.0 - SSR Support
+
+- Add SSR Support
+
+## v20.0.0 - Sync Angular Version
+
+- Sync Angular Version
+
 ## v19.0.0 - Sync Angular Version
 
 - Sync Angular Version

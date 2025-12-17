@@ -1,6 +1,6 @@
 {
   "name": "@skulljs/angular-scroll-to-top-btn",
-  "version": "20.0.0",
+  "version": "20.1.0",
   "description": "Scroll to top button for skulljs's angular component",
   "private": false,
   "repository": {

@@ -1,10 +1,11 @@
-import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
+import { Directive, ElementRef, Inject, Input, OnChanges, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { v4 as uuidv4 } from 'uuid';
 
 @Directive({
-    // eslint-disable-next-line @angular-eslint/directive-selector
-    selector: '[skLoader]',
-    standalone: false
+  // eslint-disable-next-line @angular-eslint/directive-selector
+  selector: '[skLoader]',
+  standalone: false,
 })
 export class SkLoaderDirective implements OnChanges {
   @Input() skLoader = true;
@@ -18,11 +19,16 @@ export class SkLoaderDirective implements OnChanges {
 
   uuid = uuidv4();
 
-  constructor(el: ElementRef) {
+  constructor(el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {
     this.el = el;
   }
 
   toggleLoader() {
+    // Ne rien faire côté serveur (SSR)
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     if (this.skLoader) {
       this.el.nativeElement.style.display = 'none';
       const img = document.createElement('img');
